@@ -2,12 +2,13 @@ def is_prime(num):
     if num <= 1:
         return False
 
-
-    for i in range(2, int(num**0.5) + 1):
+    for i in range(2, int(num ** 0.5) + 1):
         if num % i == 0:
             return False  # Found a divisor other than 1 and num itself
 
     return True
+
+
 def func(var):
     if isinstance(var, list):
         count = 0
@@ -27,9 +28,9 @@ def func(var):
 
         print("Сумма после второго отрицательного элемента:", sum_after_second_negative)
         print("Все четные элементы:", odd_numbers)
-    if isinstance(var,set):
+    if isinstance(var, set):
         print(f"Максимальный элемент{max(var)}\nМинимальный элемент{min(var)}")
-    if isinstance(var,int):
+    if isinstance(var, int):
         i = 0
         my_list = list()
         for i in range(var):
@@ -38,12 +39,13 @@ def func(var):
                 my_list.append(i)
 
         print(my_list)
-    if isinstance(var,str):
-        list_n=list()
+    if isinstance(var, str):
+        list_n = list()
         for char in var:
             if char.isdigit():
                 list_n.append(char)
         print(list_n)
+
 
 while True:
     print("\nМеню:")
@@ -66,19 +68,19 @@ while True:
                         el = int(input())
                         my_list.append(el)
                     func(my_list)
+                    break
 
 
 
         elif choice == "2":
             while True:
                 n = int(input("Введите размер множества: "))
-                if n<0:
+                if n < 0:
                     print("Размер не может быть отрицательным")
                 else:
                     print("Введите элементы множества: ")
                     my_set = set()
                     for i in range(n):
-
 
                         while True:
                             num = int(input())
@@ -89,11 +91,12 @@ while True:
                         my_set.add(num)
 
                     func(my_set)
+                    break
 
 
         elif choice == "3":
             n = int(input("Введите число: "))
-            if n<0:
+            if n < 0:
                 print("Число не может быть отрицательным")
             else:
                 func(n)
@@ -105,16 +108,15 @@ while True:
             print("До свидания!")
             break
         else:
-                print("Некорректный ввод. Пожалуйста, выберите пункт из меню.")
+            print("Некорректный ввод. Пожалуйста, выберите пункт из меню.")
     except ValueError:
         print("Введено неверное значение")
     finally:
         print("Завершение вычисления")
 
-
-#a = ('wffwf1w31f321wefw')
-#func(a)
-#a = 58
-#func(a)
-#my_list = [1, 2, 3, 4, -2, 3, -1, 2, 1, 2, -3, 3, 8]
-#func(my_list)
+# a = ('wffwf1w31f321wefw')
+# func(a)
+# a = 58
+# func(a)
+# my_list = [1, 2, 3, 4, -2, 3, -1, 2, 1, 2, -3, 3, 8]
+# func(my_list)
