@@ -1,4 +1,4 @@
-with open("F1.txt", 'w+') as F1:
+with open("F1.txt", 'w+',encoding="utf-8") as F1:
     while True:
         a = input("Введите строку: ")
         if not a:
