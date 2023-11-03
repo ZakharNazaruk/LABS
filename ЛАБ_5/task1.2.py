@@ -1,0 +1,18 @@
+import numpy as np
+
+a = np.ones((1,12))
+n= int(input("Введите n: "))
+b = np.random.randint(n,n+12,(1,12))
+c = np.random.randint(60,82,(1,12))
+d= np.vstack((a, b, c))
+X = d.transpose()
+print(X)
+Y =  np.random.uniform(13.5,18.6,12)
+X_transpose = np.transpose(X)
+A = np.linalg.inv(X_transpose.dot(X)).dot(X_transpose).dot(Y)
+print(f"Оценки коэффициентов A: \n {A}")
+Y_hat = X.dot(A)
+print("\nПолученные значения Y_hat:")
+print(Y_hat)
+print("\nИсходные значения Y:")
+print(Y)
